@@ -15,7 +15,7 @@ jobs:
         python-version: 3.7
     - name: Install dependencies
       run: |
-        pip install numpy opencv-python
+        pip install numpy opencv-python pytest
     - name: Test with pytest
       run: |
         pytest
