@@ -32,15 +32,16 @@ def colorTran(source,target,number):
 	cv2.imwrite('./result/tr'+str(number)+'.bmp',sImg)
 
 #source images(s1-s6) and target images(t1-t6) in sourceTarget directory will be color transfered to directory result.
-print("轉換sourceTarget資料夾中的所有圖片")
-files= os.listdir('./sourceTarget')
-sources = ['s1.bmp','s2.bmp','s3.bmp','s4.bmp','s5.bmp','s6.bmp']
-targets = ['t1.bmp','t2.bmp','t3.bmp','t4.bmp','t5.bmp','t6.bmp']
-for i in range(6):
-	if os.path.isfile('./sourceTarget/'+sources[i]) and os.path.isfile('./sourceTarget/'+targets[i]):
-		print("轉換",sources[i],'中...')
-		colorTran(sources[i],targets[i],i+1)
-	else:
-		print(sources[i]," doesn't exist.")
+def main():
+	print("轉換sourceTarget資料夾中的所有圖片")
+	files= os.listdir('./sourceTarget')
+	sources = ['s1.bmp','s2.bmp','s3.bmp','s4.bmp','s5.bmp','s6.bmp']
+	targets = ['t1.bmp','t2.bmp','t3.bmp','t4.bmp','t5.bmp','t6.bmp']
+	for i in range(6):
+		if os.path.isfile('./sourceTarget/'+sources[i]) and os.path.isfile('./sourceTarget/'+targets[i]):
+			print("轉換",sources[i],'中...')
+			colorTran(sources[i],targets[i],i+1)
+		else:
+			print(sources[i]," doesn't exist.")
 
-os.system('pause')
+# os.system('pause')
